@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+
+    <div class="bounds">
+    <div class="grid-30 centered">
+        <h2>Sign Up</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.email.errors }}
+            {{ form.email }}
+
+            {{ form.password1.errors }}
+            {{ form.password1 }}
+
+            {{ form.password2.errors }}
+            {{ form.password2 }}
+            <button class="button-primary" type="submit">Sign Up</button>
+        </form>
+    </div>
+    </div>
+
+{% endblock %}
