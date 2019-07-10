@@ -25,8 +25,7 @@ class Position(models.Model):
     description = models.TextField(default='')
     project = models.ForeignKey(Project,
         related_name='positions', on_delete=models.DO_NOTHING)
-    skills = models.ManyToManyField(Skill,
-        related_name='related_skills', on_delete=models.DO_NOTHING)
+    skills = models.ManyToManyField(Skill, related_name='related_skills')
 
     def __str__(self):
         return '{}'.format(self.name)
