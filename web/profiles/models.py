@@ -35,8 +35,8 @@ class UserProject(models.Model):
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, primary_key=True, related_name='profile')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL,
+        primary_key=True, related_name='profile', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, default='')
     last_name = models.CharField(max_length=50, default='')
     slug = models.SlugField(max_length=32, unique=True, blank=True)
