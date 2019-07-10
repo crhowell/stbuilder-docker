@@ -22,11 +22,14 @@ The [Social Team Builder](https://github.com/crhowell/social-team-builder) proje
 4. Postgres Database
 
 **NGINX**
+
 * Handles media and static file requests.
 * Acting as a proxy server, forwards all non-media/non-static file requests over to gunicorn for Django to process.
 
 **Django App Instances + Gunicorn**
+
 Running identical application instances in separate containers with Gunicorn + 3 workers.
 
 **Postgres**
+
 Django app instances are connected to the same postgres database container.
