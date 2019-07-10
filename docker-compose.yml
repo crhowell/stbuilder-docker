@@ -13,9 +13,6 @@ services:
       - "8080:8080"
     networks:
       - stbuilder-network
-    volumes:
-      - ./web/static:/static
-      - ./web/media:/media
 
   node1:
     container_name: app-1
@@ -25,8 +22,8 @@ services:
     ports:
       - "8081"
     volumes:
-      - ./web/static:/var/www/public/stbuilder/static
-      - ./web/media:/var/www/public/stbuilder/media
+      - ./web/static:/var/www/stbuilder/static
+      - ./web/media:/var/www/stbuilder/media
     working_dir: /var/www/stbuilder
     networks:
       - stbuilder-network
@@ -41,8 +38,8 @@ services:
     ports:
       - "8081"
     volumes:
-      - ./web/static:/var/www/public/stbuilder/static
-      - ./web/media:/var/www/public/stbuilder/media
+      - ./web/static:/var/www/stbuilder/static
+      - ./web/media:/var/www/stbuilder/media
     working_dir: /var/www/stbuilder
     networks:
       - stbuilder-network
