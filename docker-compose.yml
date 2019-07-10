@@ -14,8 +14,8 @@ services:
     networks:
       - stbuilder-network
     volumes:
-      - ./web/static:/var/www/public/stbuilder/static
-      - ./web/media:/var/www/public/stbuilder/media
+      - ./web/static:/static
+      - ./web/media:/media
 
   node1:
     container_name: app-1
