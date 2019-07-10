@@ -2,10 +2,7 @@
 
 The [Social Team Builder](https://github.com/crhowell/social-team-builder) project rebuilt for Docker.
 
-> **NOTE**: This repo was created primarily for:
-> 1. Practicing with Docker Compose
-> 2. Experiments using NGINX to load balance (round-robin) between 2 Django app instances
->
+> **NOTE**: This repo was created primarily for experiments on my local NAS box.
 
 ### To run
 
@@ -23,6 +20,7 @@ The [Social Team Builder](https://github.com/crhowell/social-team-builder) proje
 
 **NGINX**
 
+* Load balancing (round-robin) between two app instances.
 * Handles media and static file requests.
 * Acting as a proxy server, forwards all non-media/non-static file requests over to gunicorn for Django to process.
 
