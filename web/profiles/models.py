@@ -27,7 +27,8 @@ class Skill(models.Model):
 class UserProject(models.Model):
     name = models.CharField(max_length=200)
     url = models.URLField()
-    profile = models.ForeignKey('UserProfile', related_name='my_projects')
+    profile = models.ForeignKey('UserProfile',
+        related_name='my_projects', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
@@ -76,9 +77,11 @@ class UserProfile(models.Model):
 
 
 class UserApplication(models.Model):
-    applicant = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='application')
-    project = models.ForeignKey('projects.Project')
-    position = models.ForeignKey('projects.Position', related_name='applications')
+    applicant = models.ForeignKey(settings.AUTH_USER_MODEL,
+        related_name='application', on_delete=models.DO_NOTHING)
+    project = models.ForeignKey('projects.Project', on_delete=models.DO_NOTHING)
+    position = models.ForeignKey('projects.Position',
+        related_name='applications', on_delete=models.DO_NOTHING)
     is_accepted = models.NullBooleanField(default=None)
 
     def __str__(self):

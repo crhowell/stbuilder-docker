@@ -10,7 +10,7 @@ class Project(models.Model):
     requirements = models.TextField(default='')
     timeline = models.CharField(max_length=255, blank=True)
     creator = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                related_name='projects', null=True)
+        related_name='projects', null=True, on_delete=models.DO_NOTHING)
 
     @property
     def open_positions(self):
@@ -23,8 +23,10 @@ class Project(models.Model):
 class Position(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(default='')
-    project = models.ForeignKey(Project, related_name='positions')
-    skills = models.ManyToManyField(Skill, related_name='related_skills')
+    project = models.ForeignKey(Project,
+        related_name='positions', on_delete=models.DO_NOTHING)
+    skills = models.ManyToManyField(Skill,
+        related_name='related_skills', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return '{}'.format(self.name)
