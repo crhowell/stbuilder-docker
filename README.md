@@ -9,7 +9,10 @@ The [Social Team Builder](https://github.com/crhowell/social-team-builder) proje
 1. Clone this repo.
 2. `docker-compose up --build` 
 
-> Building the docker images using the docker-compose command will attempt to run 4 separate containers.
+> **NOTE** (Mac): If you get an ERROR containing `OCI runtime create failed:` against the `entrypoint.sh` file.
+> you will need to `cd` into the `web` directory and `chmod +x entrypoint.sh` to make it executable.
+
+Building the docker images using the docker-compose command will attempt to run 4 separate containers.
 
 ### Containers created
 
