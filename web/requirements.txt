@@ -1,5 +1,5 @@
 coverage==4.5.3
-Django==1.11.22
+Django==1.11.29
 django-appconf==1.0.3
 django-authtools==1.7.0
 django-autocomplete-light==3.3.5
